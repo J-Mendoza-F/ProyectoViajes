@@ -1,16 +1,18 @@
+import {Bus} from "./Bus";
 import {Ruta} from "./Ruta";
-import {EstadoViaje} from "./enums";
-import {ListaPasajeros} from "./ListaPasajeros";
+import {Asiento} from "./Asiento";
+import {EstadoViaje} from "./enums/EstadoViaje";
 
 export class Viaje{
-    public listaPasajeros:ListaPasajeros;
-
     constructor(
-        public: id:string,
+        public id:string,
         public ruta: Ruta,
-        public fechaHoraSalida: Date,
+        public bus: Bus,
+        public fecha: Date,
         public estado: EstadoViaje
-    ){
-        this.listaPasajeros=new ListaPasajeros();
+    ){}
+
+    asientosDisponibles(): Asiento[]{
+        return this.bus.asientos.filter(a=>!a.ocupado);
     }
 }

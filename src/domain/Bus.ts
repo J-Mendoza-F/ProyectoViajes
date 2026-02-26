@@ -6,4 +6,8 @@ export class Bus{
         public placa:string,
         public asientos:Asiento[]
     ){}
+
+    obtemerAsiento(numero: number): Asiento | null{
+        return this.asientos.find(a=>a.numero === numero) || null;
+    }
 }

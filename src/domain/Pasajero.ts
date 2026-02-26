@@ -1,6 +1,7 @@
 export class Pasajero{
     constructor(
-        public dni: string,
-        public nombre: string
+        public id: string,
+        public nombre: string,
+        public dni: string
     ){}
 }
