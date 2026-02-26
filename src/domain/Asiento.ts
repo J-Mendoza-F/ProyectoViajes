@@ -1,15 +1,8 @@
+import {TipoTarifa} from "./enums";
+
 export class Asiento{
-    constructor(public numero:number, 
-                private ocupado:boolean=false
+    constructor(
+        public numero:number,
+        public tipoTarifa:TipoTarifa
     ){}
-    estaDisponible():boolean{
-        return !this.ocupado;
-    }
-    ocupar(){
-        if(this.ocupado) throw new Error("Asiento ya ocupado");
-        this.ocupado=true;
-    }
-    liberar(){
-        this.ocupado=false;
-    }
 }

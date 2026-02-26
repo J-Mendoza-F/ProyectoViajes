@@ -6,7 +6,4 @@ export class Bus{
         public placa:string,
         public asientos:Asiento[]
     ){}
-    obtenerAsiento(numero:number){
-        return this.asientos.find(a=>a.numero===numero);
-    }
 }
